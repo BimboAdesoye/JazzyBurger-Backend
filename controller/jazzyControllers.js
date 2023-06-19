@@ -13,7 +13,7 @@ const create_burger = async (req, res) => {
     if (!title || !description || !image || !category || !price) {
       res.status(404).json({ err: "All input fields should be filled!" });
     }
-    if (title || description || image || category || label) {
+    if (title || description || image || category || price) {
       const savedBurgers = await Burgers.save();
       res.status(200).json(savedBurgers);
     }
