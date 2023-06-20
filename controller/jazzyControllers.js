@@ -65,10 +65,18 @@ const single_Burger = async (req, res) => {
   }
 };
 
+const get_category = async(req,res)=>{
+
+ const pp =await BURGERS.find({category:req.params.category})
+ res.json(pp)
+ 
+}
+
 module.exports = {
   create_burger,
   find_burger,
   delete_burger,
   update_burger,
   single_Burger,
+  get_category
 };
